@@ -143,7 +143,7 @@ class FTreeCompileSpec extends FlatSpec with Matchers {
 //       1 :+ "toto" :+ true :+ 1.234 :+ Toto("tutu", 9.87f) :+
 //       1 :+ "toto" :+ true :+ 1.234 :+ Toto("tutu", 9.87f) :+
 //       1 :+ "toto" :+ true :+ 1.234 :+ Toto("tutu", 9.87f) :+
-// 500
+// // 500
 //       1 :+ "toto" :+ true :+ 1.234 :+ Toto("tutu", 9.87f) :+
 //       1 :+ "toto" :+ true :+ 1.234 :+ Toto("tutu", 9.87f) :+
 //       1 :+ "toto" :+ true :+ 1.234 :+ Toto("tutu", 9.87f) :+
