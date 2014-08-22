@@ -99,8 +99,8 @@ object HFree {
 
   object ToView extends Poly1 {
 
-    implicit def casePureEmpty[S[_], A]: Case.Aux[HFree.Aux[S, A, A, Pure[S, A], FingerTree.Empty.type], Pure[S, A]] = 
-      at[HFree.Aux[S, A, A, Pure[S, A], FingerTree.Empty.type]] { free =>
+    implicit def casePureEmpty[S[_], A, X]: Case.Aux[HFree.Aux[S, A, X, Pure[S, X], FingerTree.Empty.type], Pure[S, X]] = 
+      at[HFree.Aux[S, A, X, Pure[S, X], FingerTree.Empty.type]] { free =>
         Pure(free.head.a)
       }
 
