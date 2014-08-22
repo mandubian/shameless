@@ -18,7 +18,7 @@ resolvers in ThisBuild  ++= Seq(
   "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
 )
 
-scalacOptions ++= Seq("-unchecked", "-deprecation", "-Xlog-implicits")
+//scalacOptions ++= Seq("-unchecked", "-deprecation", "-Xlog-implicits")
 
 lazy val root = project.aggregate(core, testsHList, testsFTree)
 

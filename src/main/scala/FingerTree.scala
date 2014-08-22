@@ -136,6 +136,27 @@ object FingerTree {
   ): Out = d(l :: tree :: sf :: HNil)
 
 
+  object ViewL extends Poly1 {
+    implicit def caseEmpty: Case.Aux[Empty.type, HNil] = at[Empty.type] { t => HNil }
+
+    implicit def caseSingle[A]: Case.Aux[Single[A], A :: HNil] = at[Single[A]] { t => t.a :: HNil }
+
+    implicit def caseDeep[
+      PR <: Digit,
+      MD <: FingerTree,
+      SF <: Digit,
+      A, HL <: HList,
+      Out <: FingerTree
+    ](
+      implicit toList: Digit.ToList.Case.Aux[PR, A :: HL],
+               deepl: DeepL.Case.Aux[HL, MD, SF, Out]
+    ): Case.Aux[Deep[PR, MD, SF], A :: Out :: HNil] = at[Deep[PR, MD, SF]] { t => 
+      val l = toList(t.prefix)
+
+      l.head :: deepl(l.tail :: t.middle :: t.suffix :: HNil) :: HNil
+    }
+  }
+
   object DeepL extends Poly3 {
 
     implicit def caseHL[
