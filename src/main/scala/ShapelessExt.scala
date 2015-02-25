@@ -24,7 +24,9 @@ object ShapelessExtImplicits
   with HMonoidImplicits
   with HApplicativeImplicits
 
-
+/** HMonad is non-sense because it's NOT COMPILE TIME
+ *  Just wrote it for fun but IT SHALL BE DELETED
+ */
 trait HMonads extends HPoints {
 
   trait HMonad[HA, F] {
